@@ -118,11 +118,10 @@ module.exports = {
                     userData.save()
                 }
             }
-    
+            
     
         
     }
 
-    }
-    
 }
+    
