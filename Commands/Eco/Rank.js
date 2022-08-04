@@ -7,7 +7,7 @@ const { createCanvas, loadImage } = require("canvas")
 console.log("lol")
 const { User } = require("../Utils/test-schema.js")
 console.log("lol")
-const ExpantaNum = require("ExpantaNum.js")
+const ExpantaNum = require("./ExpantaNum.js")
 console.log("lol")
 module.exports = {
     name: "rank",
