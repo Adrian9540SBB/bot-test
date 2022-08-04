@@ -7,10 +7,9 @@ module.exports = {
     description: "Your balance",
     async execute(message, args, commandName, client, Discord) {
             const user = message.author.id
-            console.log(target.id.username)
             const userData = await User.findOne({id: target.id}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
-            .setTitle(`${user.username}'s balance`)
+            .setTitle(`${message.author.username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
             .setColor("GREEN")
             .setThumbnail(user.displayAvatarURL())
