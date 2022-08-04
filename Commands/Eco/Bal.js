@@ -5,7 +5,6 @@ module.exports = {
     name: "bal",
     description: "Your balance",
     execute(message, args, commandName, client, Discord) {
-        run: async(message) => {
             const target = message.mentions.users.first() || message.author;
             const user = message.guild.members.cache.get(target.id);
             const userData = User.findOne({id: user}) || new User({id: user})
@@ -20,6 +19,5 @@ module.exports = {
             return message.channel.send({
                 embeds: [ balanceEmbed ]
             })
-        }
     }
 }
