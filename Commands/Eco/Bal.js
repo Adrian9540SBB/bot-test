@@ -12,7 +12,7 @@ module.exports = {
             console.log(username)
             const userData = await User.findOne({id: user}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
-            .setTitle(`${user}'s balance`)
+            .setTitle(`${username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
             .setColor("GREEN")
             .setThumbnail(user.displayAvatarURL())
