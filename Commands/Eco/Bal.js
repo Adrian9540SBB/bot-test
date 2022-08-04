@@ -8,7 +8,7 @@ module.exports = {
     async execute(message, args, commandName, client, Discord) {
             const target = message.mentions.users.first() || message.author;
             console.log(target.id.username)
-            const userData = await User.findOne({id: user}) || new User({id: user})
+            const userData = await User.findOne({id: target.id}) || new User({id: target.id})
             const balanceEmbed = new MessageEmbed()
             .setTitle(`${target.id.username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
