@@ -22,7 +22,7 @@ module.exports = {
         const level = `${userData.level}`
         const xp = `${userData.xp}`
         console.log("lol")
-        const xpneed = ExpantaNum(ExpantaNum.mul(level, ExpantaNum.mul(250, ExpantaNum.add(250,0))))
+        const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250))
         let backgroundrank = userData.backgroundrank
 
         if (!backgroundrank) {
@@ -60,7 +60,7 @@ module.exports = {
     
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
-            ctx.fillRect(200,216,((ExpantaNum.mul(ExpantaNum.mul(Expantanum.div(100,ExpantaNum.mul(level, ExpantaNum.mul(250, ExpantaNum.add(250,0)))),xp),7.5))).toString(),65) // Uses ExpantaNum
+            ctx.fillRect(200,216,((ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250),xp),7.5),100))),50) // Uses ExpantaNum
             ctx.fill()
             ctx.globalAlpha = 1
     
@@ -112,7 +112,7 @@ module.exports = {
                 userData.xp = ExpantaNum(ExpantaNum.add(userData.xp,randomXP)).toString()
                 const level = `${userData.level}`
                 const xp = `${userData.xp}`
-                const xpneed = ExpantaNum(ExpantaNum.mul(level, ExpantaNum.mul(250, ExpantaNum.add(250,0)))).toString()
+                const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250)).toString()
     
                 if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                     const levelnew = ExpantaNum.add(`${userData.level}`,1).toString()
