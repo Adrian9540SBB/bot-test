@@ -12,7 +12,6 @@ module.exports = {
         const prefix = "^^"
         const userData = await User.findOne({id: user}) || new User({id: user})
         xp(message)
-        if (message.content === `${prefix}rank`) {
             const member = message.mentions.users.first() || message.author;
             const level = `${userData.level}`
             const xp = `${userData.xp}`
@@ -113,7 +112,7 @@ module.exports = {
             }
     
         
-        }
-    
+        
     }
+    
 }
