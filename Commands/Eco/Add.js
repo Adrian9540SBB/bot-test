@@ -8,7 +8,7 @@ module.exports = {
     async execute(message, args, commandName, client, Discord) {
             const target = message.mentions.users.first() || message.author;
             const users = message.guild.members.cache.get(target.id);
-            const userData = await User.findOne({id: user}) || new User({id: user})
+            const userData = await User.findOne({id: users}) || new User({id: users})
             const embed = new MessageEmbed({ color: "BLUE"})
             userData.bal = ExpantaNum.add(args[0])
             return message.channel.send({
