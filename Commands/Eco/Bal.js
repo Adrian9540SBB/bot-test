@@ -6,10 +6,9 @@ module.exports = {
     name: "bal",
     description: "Your balance",
     async execute(message, args, commandName, client, Discord) {
-            const target = message.mentions.users.first() || message.author;
-            const user = message.guild.members.cache.get(target.id);
+            const target = message.mentions.users.id.first() || message.author.id;
             const username = user.username
-            console.log(username)
+            console.log(target.username)
             const userData = await User.findOne({id: user}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
             .setTitle(`${username}'s balance`)
