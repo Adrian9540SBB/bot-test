@@ -9,10 +9,12 @@ const User = new mongoose.Schema({
     bal: {
         type: String,
         required: true,
+        default: "0",
     },
     bank: {
         type: String,
         required: true,
+        default: "0",
     },
     cooldowns: {
         daily: {type: Date}
