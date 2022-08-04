@@ -13,7 +13,7 @@ module.exports = {
             .setTitle(`${target.id.username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
             .setColor("GREEN")
-            .setThumbnail(user.displayAvatarURL())
+            .setThumbnail(target.id.displayAvatarURL())
             .addField("- Wallet", `**\` ${userData.bal} \`**`, true)
             .addField("- Bank", `**\` ${userData.bank} \`**`, true)
     
