@@ -1,6 +1,7 @@
 
 const Discord = require("discord.js");
 const { Intents, Collection } = Discord;
+require("dotenv").config();
 const client = new Discord.Client({
     intents: 
     [
@@ -9,7 +10,6 @@ const client = new Discord.Client({
         Intents.FLAGS.GUILD_MEMBERS
     ]
 });
-const { Token } = require("./config.json");
 
 client.commands = new Collection();
 client.cooldowns = new Collection();
@@ -19,5 +19,5 @@ client.cooldowns = new Collection();
 });
     
 
-client.login(Token);
+client.login(process.env.TOKEN);
 console.log("be")
