@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "canvacord": "^5.4.3",
+    "canvas": "^2.9.3",
     "discord-xp": "^1.1.16",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
@@ -20,6 +21,7 @@
     "mongoose": "^6.5.1",
     "nodemon": "^2.0.16",
     "omega_num.js": "^0.5.6",
+    "path": "^0.12.7",
     "pretty-ms": "^8.0.0"
   }
 }
