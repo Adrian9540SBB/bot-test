@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed, Collection} = require("discord.js");
-const { Prefix } = require(`../../config.json`);
 var OmegaNum = require("omega_num.js")
+
 
 module.exports = {
     name: "messageCreate",
@@ -9,9 +9,9 @@ module.exports = {
      * @param (Message) message
      */
     async execute(message, client, Discord) {
-        if (!message.content.startsWith(Prefix) || message.author.bot ) return
+        if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
 
-        const args = message.content.slice(Prefix.length).trim().split(/ +/);
+        const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName) ||
         client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
