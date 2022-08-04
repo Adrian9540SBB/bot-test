@@ -1,3 +1,4 @@
+console.log("lol")
 const { MessageEmbed } = require("discord.js")
 const { User } = require("../Utils/test-schema")
 const fs = require("fs");
