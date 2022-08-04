@@ -9,7 +9,7 @@ console.log("lol")
 module.exports = {
     name: "rank",
     description: "yes",
-    run: async(client) => {
+    run: async(message, args, commandName, client, Discord) => {
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
