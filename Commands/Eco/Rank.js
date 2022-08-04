@@ -1,30 +1,35 @@
+
 const fs = require("fs");
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
+
 const { createCanvas, loadImage } = require("canvas")
+
 const { User } = require("../Utils/test-schema.js")
+
 const ExpantaNum = require("./ExpantaNum.js")
+
 module.exports = {
     name: "rank",
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
-        const user = message.mentions.users.first() || message.author;
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xps(message)
         console.log("lol")
-            const level = `${userData.level}`
-            const xp = `${userData.xp}`
-            console.log("lol")
-            const xpneed = ExpantaNum(ExpantaNum.mul(level, ExpantaNum.mul(250, ExpantaNum.add(250,0))))
-            let backgroundrank = `${userData.backgroundrank}`
-            if(!backgroundrank) {
-                const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-                userData.backgroundrank = FBGRL
-                userData.save()
-                return
-            }
-            console.log("lol")
+        const member = message.mentions.users.first() || message.author;
+        const level = `${userData.level}`
+        const xp = `${userData.xp}`
+        console.log("lol")
+        const xpneed = ExpantaNum(ExpantaNum.mul(level, ExpantaNum.mul(250, ExpantaNum.add(250,0))))
+        let backgroundrank = userData.backgroundrank
+
+        if (!backgroundrank) {
+            const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
+            userData.backgroundrank = FBGRL
+            userData.save()
+            return
+        }
     
             const canvas = createCanvas(1000,333)
             console.log("lol")
@@ -114,8 +119,10 @@ module.exports = {
                 }
             }
     
+    
         
-        
+    }
+
     }
     
 }
