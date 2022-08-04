@@ -13,7 +13,7 @@ const client = new Discord.Client({
 });
 
 
-cilent.on('ready', async () =>  {
+client.on('ready', async () =>  {
     await mongoose.connect(
         process.env.MONGO_URI,
         {
