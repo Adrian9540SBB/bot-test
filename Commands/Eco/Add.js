@@ -13,7 +13,7 @@ module.exports = {
             userData.bal = ExpantaNum.add(args[0])
             return message.channel.send({
              embeds: [
-                 embed.setDescription('Added' + ExpantaNum(args[0]).toStringWithDecimalPlaces(2) + "to" + user.username)
+                 embed.setDescription('Added' + ExpantaNum(args[0]).toStringWithDecimalPlaces(2) + "to" + users.username)
                 ]
             })
      
