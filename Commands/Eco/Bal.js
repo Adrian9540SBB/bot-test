@@ -8,11 +8,11 @@ module.exports = {
     async execute(message, args, commandName, client, Discord) {
             const target = message.mentions.users.first() || message.author;
             const user = message.guild.members.cache.get(target.id);
-            console.log(user.username)
+            const username = user.username
+            console.log(username)
             const userData = await User.findOne({id: user}) || new User({id: user})
-            const username = await User.findOne({username: user}) || new User({username: user})
             const balanceEmbed = new MessageEmbed()
-            .setTitle(`${user.username}'s balance`)
+            .setTitle(`${user}'s balance`)
             .setDescription("Wallet and bank details of requested user")
             .setColor("GREEN")
             .setThumbnail(user.displayAvatarURL())
