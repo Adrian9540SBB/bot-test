@@ -2,14 +2,12 @@
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
 const { createCanvas, loadimage, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema")
-const { join } = require("path")
 const ExpantaNum = require("../../Eco/ExpantaNum.js")
-const { description } = require("../../Eco/Add")
 console.log("lol")
 module.exports = {
     name: "rank",
     description: "yes",
-    run: async(message, args, commandName, client, Discord) => {
+    async execute(message, args, commandName, client, Discord) {
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
