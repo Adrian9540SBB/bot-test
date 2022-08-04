@@ -12,6 +12,7 @@ module.exports = {
     name: "rank",
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
+        const user = message.mentions.users.first() || message.author;
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
