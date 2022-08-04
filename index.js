@@ -1,7 +1,6 @@
 
 const Discord = require("discord.js");
 const { Intents, Collection } = Discord;
-require("dotenv").config();
 const client = new Discord.Client({
     intents: 
     [
