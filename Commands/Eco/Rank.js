@@ -22,7 +22,7 @@ module.exports = {
         const level = `${userData.level}`
         const xp = `${userData.xp}`
         console.log("lol")
-        const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250))
+        const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundrank = userData.backgroundrank
 
         if (!backgroundrank) {
@@ -112,7 +112,7 @@ module.exports = {
                 userData.xp = ExpantaNum(ExpantaNum.add(userData.xp,randomXP)).toString()
                 const level = `${userData.level}`
                 const xp = `${userData.xp}`
-                const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250)).toString()
+                const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
     
                 if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                     const levelnew = ExpantaNum.add(`${userData.level}`,1).toString()
