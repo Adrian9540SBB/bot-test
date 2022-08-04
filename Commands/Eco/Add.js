@@ -17,7 +17,7 @@ module.exports = {
                 message.channel.send({embeds: [embed3]})
                 return;
             }
-            if (OmegaNum.isNaN(args[0])) {
+            if (ExpantaNum.isNaN(args[0])) {
                 const embed2 = new MessageEmbed()
                 .setColor("RED")
                 .setDescription("That is not a number")
@@ -29,7 +29,7 @@ module.exports = {
             fs.writeFileSync("././Data/users.json", JSON.stringify(UserJSON));
             const embed1 = new MessageEmbed()
             .setColor("GREEN")
-            .setDescription("Added " + args[0] + " to " + target.username + "'s balance")
+            .setDescription("Added " + ExpantaNum(args[0]) + " to " + target.username + "'s balance")
             message.channel.send({embeds: [embed1]})
         }
     }
