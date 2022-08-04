@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const schema = new mongoose.Schema({
+const User = new mongoose.Schema({
     id: {
         type: String,
         required: true,
@@ -18,4 +18,4 @@ const schema = new mongoose.Schema({
         daily: {type: Date}
     }
 })
-module.exports = mongoose.model('Eco',schema)
+module.exports = { User: mongoose.model("User", User)}
