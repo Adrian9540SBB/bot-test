@@ -26,5 +26,4 @@ client.cooldowns = new Collection();
 });
     
 
-client.login(process.env.TOKEN);
-console.log("bee")
+client.login(process.env.TOKEN).then(() => mongoose.connect(process.env.MONGO_URI))
