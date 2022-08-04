@@ -5,11 +5,12 @@ const { User } = require("../Utils/test-schema")
 const { join } = require("path")
 const ExpantaNum = require("../../Eco/ExpantaNum.js")
 const { description } = require("../../Eco/Add")
-
+console.log("lol")
 module.exports = {
     name: "rank",
     description: "yes",
     run: async(client) => {
+        message.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xp(message)
