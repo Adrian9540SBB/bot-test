@@ -1,3 +1,4 @@
+
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
 const { createCanvas, loadimage, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema")
@@ -8,8 +9,7 @@ const { description } = require("../../Eco/Add")
 module.exports = {
     name: "rank",
     description: "yes",
-    async execute(message, args, commandName, client, Discord) {
-        const prefix = "^^"
+    run: async(client) => {
         const userData = await User.findOne({id: user}) || new User({id: user})
         xp(message)
             const member = message.mentions.users.first() || message.author;
