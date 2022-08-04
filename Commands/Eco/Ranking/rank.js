@@ -1,7 +1,12 @@
+console.log("lol")
 const fs = require("fs");
+console.log("lol")
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
-const { createCanvas, loadimage, loadImage } = require("canvas")
+console.log("lol")
+const { createCanvas, loadImage } = require("canvas")
+console.log("lol")
 const { User } = require("../../Utils/test-schema.js")
+console.log("lol")
 const ExpantaNum = require("../ExpantaNum.js")
 console.log("lol")
 module.exports = {
