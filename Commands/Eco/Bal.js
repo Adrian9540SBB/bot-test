@@ -6,7 +6,7 @@ module.exports = {
     name: "bal",
     description: "Your balance",
     async execute(message, args, commandName, client, Discord) {
-            const target = message.mentions.users.id.first() || message.author.id;
+            const target = message.mentions.users.first().id || message.author.id;
             console.log(target.username)
             const userData = await User.findOne({id: user}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
