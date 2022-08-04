@@ -1,24 +1,18 @@
-console.log("lol")
 const fs = require("fs");
-console.log("lol")
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
-console.log("lol")
 const { createCanvas, loadImage } = require("canvas")
-console.log("lol")
 const { User } = require("../Utils/test-schema.js")
-console.log("lol")
 const ExpantaNum = require("./ExpantaNum.js")
-console.log("lol")
 module.exports = {
     name: "rank",
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
+        const user = message.mentions.users.first() || message.author;
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xps(message)
         console.log("lol")
-            const member = message.mentions.users.first() || message.author;
             const level = `${userData.level}`
             const xp = `${userData.xp}`
             console.log("lol")
