@@ -10,6 +10,7 @@ module.exports = {
             const userData = await User.findOne({id: user}) || new User({id: user})
             const embed = new MessageEmbed({ color: "BLUE"})
             userData.bal = ExpantaNum.add(userData.bal,args[0]).toString()
+            userData.save()
             return message.channel.send({
              embeds: [
                  embed.setDescription('Added ' + ExpantaNum(args[0]) + " to " + `${user.username}`)
