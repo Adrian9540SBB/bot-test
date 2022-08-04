@@ -6,6 +6,9 @@ const User = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    username: {
+        type: String,
+    },
     bal: {
         type: String,
         required: true,

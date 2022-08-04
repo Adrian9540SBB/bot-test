@@ -7,13 +7,13 @@ module.exports = {
     description: "lol",
     async execute(message, args, commandName, client, Discord) {
             const target = message.mentions.users.first() || message.author;
-            const users = message.guild.members.cache.get(target.id);
-            const userData = await User.findOne({id: users}) || new User({id: users})
+            const user = message.guild.members.cache.get(target.id);
+            const userData = await User.findOne({id: user}) || new User({id: user})
             const embed = new MessageEmbed({ color: "BLUE"})
-            userData.bal = ExpantaNum.add(`${userData.bal}`,args[0])
+            `${userData.bal}` = ExpantaNum.add(`${userData.bal}`,args[1])
             return message.channel.send({
              embeds: [
-                 embed.setDescription('Added ' + ExpantaNum(args[0]).toStringWithDecimalPlaces(2) + " to " + `${users.username}`)
+                 embed.setDescription('Added ' + ExpantaNum(args[1]).toStringWithDecimalPlaces(2) + " to " + `${userData.username}`)
                 ]
             })
      
