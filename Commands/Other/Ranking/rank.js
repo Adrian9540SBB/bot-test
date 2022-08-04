@@ -1,4 +1,4 @@
-
+const fs = require("fs");
 const {MessageEmbed, MessageAttachment, ReactionUserManager} = require("discord.js")
 const { createCanvas, loadimage, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema")

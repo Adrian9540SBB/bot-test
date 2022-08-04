@@ -1,6 +1,5 @@
 const {MessageEmbed} = require("discord.js")
 const {User} = require("../Utils/test-schema")
-const fs = require("fs");
 var ExpantaNum = require("./ExpantaNum.js");
 module.exports = {
     name: "bal",
