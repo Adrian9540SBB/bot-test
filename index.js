@@ -1,6 +1,8 @@
 
 const Discord = require("discord.js");
 const { Intents, Collection } = Discord;
+const mongoose = require("mongoose")
+const testSchema = require("./test-schema.js")
 const client = new Discord.Client({
     intents: 
     [
@@ -9,6 +11,22 @@ const client = new Discord.Client({
         Intents.FLAGS.GUILD_MEMBERS
     ]
 });
+
+
+cilent.on('ready', async () =>  {
+    await mongoose.connect(
+        process.env.MONGO_URI,
+        {
+            keepAlive: true
+        }
+    )
+    setTimeout(async () => {
+        await new testSchema({
+            message: "hi"
+        }).save()
+    }, 1000);
+})
+
 
 client.commands = new Collection();
 client.cooldowns = new Collection();

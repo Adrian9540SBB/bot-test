@@ -17,7 +17,7 @@ module.exports = {
                 message.channel.send({embeds: [embed3]})
                 return;
             }
-            if (ExpantaNum.isNaN(args[0])) {
+            if (ExpantaNum.isNaN(args[1])) {
                 const embed2 = new MessageEmbed()
                 .setColor("RED")
                 .setDescription("That is not a number")
@@ -25,11 +25,11 @@ module.exports = {
                 return;
             }
     
-            UserJSON[member.id].bal = ExpantaNum.add(UserJSON[member.id].bal,args[0]).toStringWithDecimalPlaces(2)
+            UserJSON[member.id].bal = ExpantaNum.add(UserJSON[member.id].bal,args[1]).toStringWithDecimalPlaces(2)
             fs.writeFileSync("././Data/users.json", JSON.stringify(UserJSON));
             const embed1 = new MessageEmbed()
             .setColor("GREEN")
-            .setDescription("Added " + ExpantaNum(args[0]) + " to " + target.username + "'s balance")
+            .setDescription("Added " + ExpantaNum(args[1]) + " to " + target.username + "'s balance")
             message.channel.send({embeds: [embed1]})
         }
     }
