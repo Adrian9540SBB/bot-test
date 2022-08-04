@@ -10,7 +10,7 @@ module.exports = {
             const user = message.guild.members.cache.get(target.id);
             const userData = await User.findOne({id: user}) || new User({id: user})
             const embed = new MessageEmbed({ color: "BLUE"})
-            `${userData.bal}` = ExpantaNum.add(`${userData.bal}`,args[1])
+            userData.bal = ExpantaNum.add(`${userData.bal}`,args[1])
             return message.channel.send({
              embeds: [
                  embed.setDescription('Added ' + ExpantaNum(args[1]).toStringWithDecimalPlaces(2) + " to " + `${userData.username}`)
