@@ -6,14 +6,14 @@ module.exports = {
     name: "bal",
     description: "Your balance",
     async execute(message, args, commandName, client, Discord) {
-            const target = message.mentions.users.first() || message.author;
+            const user = message.author.id
             console.log(target.id.username)
-            const userData = await User.findOne({id: target.id}) || new User({id: target.id})
+            const userData = await User.findOne({id: target.id}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
-            .setTitle(`${target.id.username}'s balance`)
+            .setTitle(`${user.username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
             .setColor("GREEN")
-            .setThumbnail(target.id.displayAvatarURL())
+            .setThumbnail(user.displayAvatarURL())
             .addField("- Wallet", `**\` ${userData.bal} \`**`, true)
             .addField("- Bank", `**\` ${userData.bank} \`**`, true)
     
