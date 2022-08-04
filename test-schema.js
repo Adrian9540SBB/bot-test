@@ -1,9 +1,21 @@
 const mongoose = require("mongoose")
 
 const schema = new mongoose.Schema({
-    message: {
+    id: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+    },
+    bal: {
+        type: String,
+        required: true,
+    },
+    bank: {
+        type: String,
+        required: true,
+    },
+    cooldowns: {
+        daily: {type: Date}
     }
 })
 module.exports = mongoose.model('testing',schema)

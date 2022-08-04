@@ -14,17 +14,7 @@ const client = new Discord.Client({
 
 
 client.on('ready', async () =>  {
-    await mongoose.connect(
-        process.env.MONGO_URI,
-        {
-            keepAlive: true
-        }
-    )
-    setTimeout(async () => {
-        await new testSchema({
-            message: "hi"
-        }).save()
-    }, 1000);
+    console.log("YAYYYYY")
 })
 
 
