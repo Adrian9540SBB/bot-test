@@ -16,7 +16,7 @@ module.exports = {
         message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
-        xp(message)
+        xps(message)
         console.log("lol")
             const member = message.mentions.users.first() || message.author;
             const level = `${userData.level}`
@@ -106,7 +106,7 @@ module.exports = {
             const attachment = new MessageAttachment(canvas.toBuffer(), 'rank.png')
             message.channel.send(attachment)
     
-            function xp(message) {
+            function xps(message) {
                 if(message.author.bot) return
                 const randomXP = Math.floor(Math.random() * 150) + 50
                 userData.xp = ExpantaNum(ExpantaNum.add(userData.xp,randomXP)).toString()
