@@ -1,7 +1,8 @@
 const {MessageEmbed} = require("discord.js")
-const {User} = require("../../test-schema.js")
+const { User } = require("../../test-schema.js")
 const fs = require("fs");
 var ExpantaNum = require("./ExpantaNum.js")
+const { default: mongoose } = require("mongoose");
 module.exports = {
     name: "add",
     description: "lol",
