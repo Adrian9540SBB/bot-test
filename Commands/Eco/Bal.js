@@ -14,7 +14,7 @@ module.exports = {
         .setDescription("Wallet and bank details of requested user")
         .setColor("GREEN")
         .setThumbnail(user.displayAvatarURL())
-        .addField("- Wallet", `**\` ${userData.wallet} \`**`, true )
+        .addField("- Wallet", `**\` ${userData.bal} \`**`, true )
         .addField("- Bank", `**\` ${userData.bank} \`**`, true )
         return message.reply({
             embeds: [balanceEmbed]
