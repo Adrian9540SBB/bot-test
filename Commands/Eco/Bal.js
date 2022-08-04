@@ -1,4 +1,4 @@
-const {MessageEmbed, User} = require("discord.js")
+const {MessageEmbed} = require("discord.js")
 const {User} = require("../../test-schema.js")
 const fs = require("fs");
 var ExpantaNum = require("./ExpantaNum.js");
