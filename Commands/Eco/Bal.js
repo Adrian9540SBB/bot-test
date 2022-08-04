@@ -1,15 +1,14 @@
 const {MessageEmbed} = require("discord.js")
-const {User} = require("../../test-schema.js")
+const {User} = require("../Utils/test-schema")
 const fs = require("fs");
 var ExpantaNum = require("./ExpantaNum.js");
-const { default: mongoose } = require("mongoose");
 module.exports = {
     name: "bal",
     description: "Your balance",
-    execute(message, args, commandName, client, Discord) {
+    async execute(message, args, commandName, client, Discord) {
             const target = message.mentions.users.first() || message.author;
             const user = message.guild.members.cache.get(target.id);
-            const userData = User.findOne({id: user}) || new User({id: user})
+            const userData = await User.findOne({id: user}) || new User({id: user})
             const balanceEmbed = new MessageEmbed()
             .setTitle(`${user.username}'s balance`)
             .setDescription("Wallet and bank details of requested user")
