@@ -18,4 +18,4 @@ const schema = new mongoose.Schema({
         daily: {type: Date}
     }
 })
-module.exports = mongoose.model('testing',schema)
+module.exports = mongoose.model('Eco',schema)

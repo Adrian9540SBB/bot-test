@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 const { Intents, Collection } = Discord;
 const mongoose = require("mongoose")
-const testSchema = require("./test-schema.js")
+const testSchema = require("./Commands/Utils/test-schema")
 const client = new Discord.Client({
     intents: 
     [
