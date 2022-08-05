@@ -19,9 +19,9 @@ module.exports = {
         const level = `${userData.level}`
         const xp = `${userData.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
-        let backgroundrank = userData.backgroundrank
+        let backgroundranks = userData.backgroundrank
 
-        if (!backgroundrank) {
+        if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
             userData.backgroundrank = FBGRL
