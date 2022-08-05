@@ -30,7 +30,7 @@ const User = new mongoose.Schema({
             required: true,
             default: "0",
         },
-        bg: {
+        backgroundrank: {
             type: String,
             required: true,
             default: "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg",
