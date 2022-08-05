@@ -33,7 +33,7 @@ const User = new mongoose.Schema({
         backgroundrank: {
             type: String,
             required: true,
-            default: "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg",
+            default: "",
         },
         xpneeded: {
             type: String,
@@ -50,4 +50,4 @@ const User = new mongoose.Schema({
         daily: {type: Date}
     }
 })
-module.exports = { User: mongoose.model("User", User)}
+module.exports = { User: mongoose.model("Coping", User)}
