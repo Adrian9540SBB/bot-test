@@ -9,8 +9,10 @@ const { User } = require("../Utils/test-schema.js")
 const ExpantaNum = require("./ExpantaNum.js")
 module.exports = (client) => {
     client.on('messageCreate', async message => {
+        console.log("eea")
         xps(message)
         if (message.content === "^^rank"){
+            console.log("ee")
             const user = message.mentions.users.first() || message.author;
             const userData = User.findOne({id: user}) || new User({id: user})
             const member = message.mentions.users.first() || message.author;
