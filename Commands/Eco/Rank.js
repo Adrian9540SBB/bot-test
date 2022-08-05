@@ -101,15 +101,6 @@ module.exports = {
             const attachment = new MessageAttachment(canvas.toBuffer(), 'rank.png')
             message.channel.send(attachment)
 
-            const embed = new MessageEmbed()
-            .setAuthor(`${user.username}'s Rank`, user.displayAvatarURL({dynamic: true}))
-            .setTimestamp()
-            .setColor('RANDOM')
-            .addField('Level:', `${level}`)
-            .addField('XP:', `${xp} / ${xpneed}`)
-            .setImage('attachment://rank.png')
-            .attachFiles(attachment)
-            message.channel.send(embed)
 
 
             
