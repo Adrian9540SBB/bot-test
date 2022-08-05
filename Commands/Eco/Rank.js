@@ -22,6 +22,7 @@ module.exports = {
         let backgroundrank = userData.backgroundrank
 
         if (!backgroundrank) {
+            console.log("lol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
             userData.backgroundrank = FBGRL
             userData.save()
@@ -31,7 +32,7 @@ module.exports = {
             const canvas = createCanvas(1000,333)
             const ctx = canvas.getContext('2d')
             let backgroundimage = await loadImage(backgroundrank)
-            if(!backgroundrank || backgroundimage === null) {
+            if(!backgroundimage || backgroundimage === null) {
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
                 userData.backgroundrank = FBGRL
                 userData.save()
@@ -112,7 +113,7 @@ module.exports = {
             message.channel.send(embed)
 
 
-    
+            
             function xps(message) {
                 if(message.author.bot) return
                 const randomXP = Math.floor(Math.random() * 150) + 50
