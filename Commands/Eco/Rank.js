@@ -99,7 +99,7 @@ module.exports = {
             ctx.drawImage(avatar,40,40,250,250)
             
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
-            message.channel.reply({
+            message.channel.send({
                 files: [attachment]
             })
 
