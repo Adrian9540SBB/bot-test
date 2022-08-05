@@ -98,18 +98,9 @@ module.exports = {
             const avatar = await loadImage(user.displayAvatarURL({ format: 'jpg' }))
             ctx.drawImage(avatar,40,40,250,250)
             
-            const attachment = new MessageAttachment(canvas.toBuffer(),'rank.png')
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
             message.channel.send("yes ", attachment)
 
-            const embed = new MessageEmbed()
-            .setAuthor(`${user.username}'s Rank`, user.displayAvatarURL({ dynamic: true }))
-            .setTimestamp()
-            .setColor('RANDOM')
-            .addField('Level:', `${userData.levelranking.level}`)
-            .addField('XP:', `${userData.levelranking.xp} / ${userData.levelranking.xpneeded}`)
-            .setImage('attachment://rank.png')
-            .attachFiles(attachment)
-            message.channel.send(embed)
 
             
             function xps(message) {
