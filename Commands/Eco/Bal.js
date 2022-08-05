@@ -1,12 +1,12 @@
 const {MessageEmbed} = require("discord.js")
-const {yo} = require("../Utils/test-schema")
+const {User} = require("../Utils/test-schema")
 var ExpantaNum = require("./ExpantaNum.js");
 module.exports = {
     name: "bal",
     description: "Your balance",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
-        const userData = await User.findOne({id: yo}) || new User({id: yo})
+        const userData = await User.findOne({id: user}) || new User({id: user})
 
         const balanceEmbed = new MessageEmbed()
         .setTitle(`${user.username}'s balance`)

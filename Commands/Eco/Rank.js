@@ -4,7 +4,7 @@ const {MessageEmbed, MessageAttachment} = require("discord.js")
 
 const { createCanvas, loadImage } = require("canvas")
 
-const { yo } = require("../Utils/test-schema.js")
+const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
 
@@ -16,16 +16,16 @@ module.exports = {
         const userData = await User.findOne({id: yo}) || new User({id: yo})
         xps(message)
         const member = message.mentions.users.first() || message.author;
-        const level = `${userData.level}`
-        const xp = `${userData.xp}`
+        const level = `${userData.levelranking.level}`
+        const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
-        let backgroundranks = userData.backgroundrank
+        let backgroundranks = userData.levelranking.backgroundrank
         userData.save()
 
         if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-            userData.backgroundrank = FBGRL
+            userData.levelranking.backgroundrank = FBGRL
             userData.save()
             return
         }
@@ -36,7 +36,7 @@ module.exports = {
             if(!backgroundimage || backgroundimage === null) {
                 console.log("aaaaa")
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-                userData.backgroundrank = FBGRL
+                userData.levelranking.backgroundrank = FBGRL
                 userData.save()
                 message.reply("Try Again")
                 return
@@ -119,13 +119,13 @@ module.exports = {
             function xps(message) {
                 if(message.author.bot) return
                 const randomXP = Math.floor(Math.random() * 150) + 50
-                userData.xp = ExpantaNum(ExpantaNum.add(userData.xp,randomXP)).toString()
-                const level = `${userData.level}`
-                const xp = `${userData.xp}`
+                userData.xp = ExpantaNum(ExpantaNum.add(userData.levelranking.xp,randomXP)).toString()
+                const level = `${userData.levelranking.level}`
+                const xp = `${userData.levelranking.xp}`
                 const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
     
                 if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
-                    const levelnew = ExpantaNum.add(`${userData.level}`,1).toString()
+                    const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
                     userData.save()
                 }
             }

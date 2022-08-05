@@ -1,6 +1,6 @@
 console.log("lol")
 const { MessageEmbed } = require("discord.js")
-const { yo } = require("../Utils/test-schema")
+const { User } = require("../Utils/test-schema")
 const fs = require("fs");
 var ExpantaNum = require("./ExpantaNum.js")
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     description: "lol",
     async execute(message, args, commandName, client, Discord) {
             const user = message.mentions.users.first() || message.author;
-            const userData = await User.findOne({id: yo}) || new User({id: yo})
+            const userData = await User.findOne({id: user}) || new User({id: user})
             const embed = new MessageEmbed({ color: "BLUE"})
             userData.bal = ExpantaNum.add(userData.bal,args[0]).toString()
             userData.save()
