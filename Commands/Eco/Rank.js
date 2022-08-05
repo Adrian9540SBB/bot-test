@@ -99,7 +99,7 @@ module.exports = {
             ctx.drawImage(avatar,40,40,250,250)
             
             const attachment = new MessageAttachment(canvas.toBuffer(), 'rank.png')
-            message.channel.send(attachment)
+            message.channel.send("yo" + attachment)
 
 
 
