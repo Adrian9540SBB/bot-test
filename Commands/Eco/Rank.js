@@ -13,7 +13,6 @@ module.exports = {
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
-        console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xps(message)
         const member = message.mentions.users.first() || message.author;
@@ -46,7 +45,7 @@ module.exports = {
             ctx.lineWidth = 4
             ctx.strokeStyle = "#0085f2"
             ctx.globalAlpha = 0.2
-            cts.fillStyle = '#ff3700'
+            ctx.fillStyle = '#ff3700'
             ctx.fillRect(180,216,775,65)
             ctx.fill()
             ctx.globalAlpha = 1
