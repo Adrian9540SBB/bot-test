@@ -49,4 +49,4 @@ const User = new mongoose.Schema({
         daily: {type: Date}
     }
 })
-module.exports = { User: mongoose.model("yo", User)}
+module.exports = { User: mongoose.model("hiiii", User)}

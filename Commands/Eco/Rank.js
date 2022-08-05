@@ -10,13 +10,16 @@ const ExpantaNum = require("./ExpantaNum.js");
 module.exports = {
     name: "rank",
     description: "yes",
-     async execute (message, args, commandName, client, Discord) {
+    async execute (message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
         const userData = User.findOne({id: user}) || new User({id: user})
         const backgroundranks = `${userData.levelranking.backgroundrank}`
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
+        client.on('messageCreate', async message => {
+            xps(message)
+        })
 
         if (!backgroundranks) {
             console.log("leeol")
