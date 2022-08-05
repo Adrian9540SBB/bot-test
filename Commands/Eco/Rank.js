@@ -20,13 +20,11 @@ module.exports = {
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundranks = userData.levelranking.backgroundrank
-        userData.save()
 
         if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
             userData.levelranking.backgroundrank = FBGRL
-            userData.save()
             return
         }
     
@@ -37,7 +35,6 @@ module.exports = {
                 console.log("aaaaa")
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
                 userData.levelranking.backgroundrank = FBGRL
-                userData.save()
                 message.reply("Try Again")
                 return
             }
@@ -126,12 +123,11 @@ module.exports = {
     
                 if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                     const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
-                    userData.save()
                 }
             }
+            userData.save()
             
-        }
-        
+        }      
     }
 
     
