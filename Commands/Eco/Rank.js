@@ -12,9 +12,11 @@ module.exports = {
     name: "rank",
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
+        client.on('message', async message => {
+            xps(message)
+        })
         const user = message.mentions.users.first() || message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
-        xps(message)
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
@@ -55,7 +57,7 @@ module.exports = {
     
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
-            ctx.fillRect(200,216,((ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250),xp),7.5),100))),50) // Uses ExpantaNum
+            ctx.fillRect(200,216,((ExpantaNum(((100 / (level * 2 * 250 + 250)) * currentXP) * 7.5))),50) // Uses ExpantaNum
             ctx.fill()
             ctx.globalAlpha = 1
     
@@ -108,7 +110,7 @@ module.exports = {
             function xps(message) {
                 if(message.author.bot) return
                 const randomXP = Math.floor(Math.random() * 150) + 50
-                userData.xp = ExpantaNum(ExpantaNum.add(userData.levelranking.xp,randomXP)).toString()
+                userData.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toString()
                 const level = `${userData.levelranking.level}`
                 const xp = `${userData.levelranking.xp}`
                 const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
