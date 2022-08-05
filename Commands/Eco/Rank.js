@@ -7,7 +7,7 @@ const { createCanvas, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
-const userData = await User.findOne({id: user}) || new User({id: user})
+const userData = User.findOne({id: user}) || new User({id: user})
 module.exports = {
     name: "rank",
     description: "yes",
