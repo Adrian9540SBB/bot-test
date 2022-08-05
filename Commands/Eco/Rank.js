@@ -16,11 +16,9 @@ module.exports = {
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xps(message)
-        console.log("lol")
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.level}`
         const xp = `${userData.xp}`
-        console.log("lol")
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundrank = userData.backgroundrank
 
@@ -32,8 +30,8 @@ module.exports = {
         }
     
             const canvas = createCanvas(1000,333)
-            console.log("lol")
             const ctx = canvas.getContext('2d')
+            let backgroundimage = await loadImage(backgroundrank)
             if(!backgroundrank || backgroundimage === null) {
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
                 userData.backgroundrank = FBGRL
@@ -41,7 +39,6 @@ module.exports = {
                 message.reply("Try Again")
                 return
             }
-            let backgroundimage = await loadImage(backgroundrank)
     
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
     
