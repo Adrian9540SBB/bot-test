@@ -13,13 +13,14 @@ module.exports = {
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
-        const userData = await User.findOne({id: coping}) || new User({id: coping})
+        const userData = await User.findOne({id: yo}) || new User({id: yo})
         xps(message)
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.level}`
         const xp = `${userData.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundranks = userData.backgroundrank
+        userData.save()
 
         if (!backgroundranks) {
             console.log("leeol")
@@ -129,7 +130,7 @@ module.exports = {
                 }
             }
             
-    
+        }
         
     }
 

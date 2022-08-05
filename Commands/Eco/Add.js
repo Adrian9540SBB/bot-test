@@ -8,7 +8,7 @@ module.exports = {
     description: "lol",
     async execute(message, args, commandName, client, Discord) {
             const user = message.mentions.users.first() || message.author;
-            const userData = await User.findOne({id: user}) || new User({id: user})
+            const userData = await User.findOne({id: yo}) || new User({id: yo})
             const embed = new MessageEmbed({ color: "BLUE"})
             userData.bal = ExpantaNum.add(userData.bal,args[0]).toString()
             userData.save()

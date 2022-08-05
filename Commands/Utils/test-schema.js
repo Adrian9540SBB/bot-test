@@ -33,7 +33,6 @@ const User = new mongoose.Schema({
         backgroundrank: {
             type: String,
             required: true,
-            default: "",
         },
         xpneeded: {
             type: String,
@@ -50,4 +49,4 @@ const User = new mongoose.Schema({
         daily: {type: Date}
     }
 })
-module.exports = { User: mongoose.model("Coping", User)}
+module.exports = { User: mongoose.model("yo", User)}
