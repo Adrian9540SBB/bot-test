@@ -6,11 +6,11 @@ const { createCanvas, loadImage } = require("canvas")
 
 const { User } = require("../Utils/test-schema.js")
 
-const ExpantaNum = require("./ExpantaNum.js")
+const ExpantaNum = require("./ExpantaNum.js");
 module.exports = {
     name: "rank",
     description: "yes",
-    run: async (message, args, commandName, client, Discord) => {
+     async execute (message, args, commandName, client, Discord) {
         client.on('messageCreate', async message => {
             xps(message)
         })
