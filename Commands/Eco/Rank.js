@@ -98,8 +98,8 @@ module.exports = {
             const avatar = await loadImage(member.displayAvatarURL({ format: 'jpg' }))
             ctx.drawImage(avatar,40,40,250,250)
             
-            const attachment = new MessageAttachment('rank.png')
-            message.channel.send("yes", attachment)
+            const attachment = new MessageAttachment(canvas.toBuffer(),'rank.png')
+            message.channel.send("yes ", attachment)
 
 
 
