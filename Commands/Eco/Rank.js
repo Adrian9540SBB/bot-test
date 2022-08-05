@@ -101,26 +101,23 @@ client.on('messageCreate', async message => {
             message.channel.send({
                 files: [attachment]
             })
+        }
+        
+        function xps(message) {
+            if(!userData) return
+            if(message.author.bot) return
+            const randomXP = Math.floor(Math.random() * 150) + 50
+            userData.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toString()
+            const level = `${userData.levelranking.level}`
+            const xp = `${userData.levelranking.xp}`
+            const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
 
-
-            
-            function xps(message) {
-                if(!userData) return
-                if(message.author.bot) return
-                const randomXP = Math.floor(Math.random() * 150) + 50
-                userData.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toString()
-                const level = `${userData.levelranking.level}`
-                const xp = `${userData.levelranking.xp}`
-                const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
-    
-                if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
-                    const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
-                }
+            if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
+                const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
             }
-            userData.save()
-
-            }
-        })   
-    }
+        }
+        userData.save()
+    })   
+}
 
     
