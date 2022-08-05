@@ -13,7 +13,7 @@ module.exports = {
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
-        const userData = await User.findOne({id: user}) || new User({id: user})
+        const userData = await User.findOne({id: coping}) || new User({id: coping})
         xps(message)
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.level}`
@@ -31,8 +31,9 @@ module.exports = {
     
             const canvas = createCanvas(1000,333)
             const ctx = canvas.getContext('2d')
-            let backgroundimage = await loadImage(backgroundrank)
+            let backgroundimage = await loadImage(backgroundranks)
             if(!backgroundimage || backgroundimage === null) {
+                console.log("aaaaa")
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
                 userData.backgroundrank = FBGRL
                 userData.save()
