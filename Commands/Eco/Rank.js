@@ -4,7 +4,7 @@ const {MessageEmbed, MessageAttachment} = require("discord.js")
 
 const { createCanvas, loadImage } = require("canvas")
 
-const { User } = require("../Utils/test-schema.js")
+const { yo } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
 
