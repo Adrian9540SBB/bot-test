@@ -22,7 +22,7 @@ module.exports = {
         let backgroundrank = userData.backgroundrank
 
         if (!backgroundrank) {
-            console.log("lol")
+            console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
             userData.backgroundrank = FBGRL
             userData.save()
