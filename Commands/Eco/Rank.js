@@ -8,6 +8,8 @@ const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js");
 module.exports = (client) => {
+
+client.on('messageCreate', async message => {
     const prefix = process.env.TOKEN
     xps(message)
     if (message.content.toLowerCase() === `${prefix}rank`) {
@@ -117,7 +119,8 @@ module.exports = (client) => {
             }
             userData.save()
 
+            }
+        })   
     }
-}
 
     
