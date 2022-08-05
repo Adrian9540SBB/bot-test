@@ -97,9 +97,10 @@ module.exports = {
     
             const avatar = await loadImage(user.displayAvatarURL({ format: 'jpg' }))
             ctx.drawImage(avatar,40,40,250,250)
+            const image = await loadImage(canvas({ format: 'png'}))
             
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
-            message.channel.send("yes ", attachment)
+            message.channel.send("yes ", image)
 
 
             
