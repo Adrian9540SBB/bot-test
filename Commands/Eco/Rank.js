@@ -1,15 +1,13 @@
 
 const fs = require("fs");
-const {MessageEmbed, MessageAttachment} = require("discord.js")
+const {MessageEmbed, MessageAttachment, Client} = require("discord.js")
 
 const { createCanvas, loadImage } = require("canvas")
 
 const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js");
-module.exports = (client) => {
-
-client.on('messageCreate', async message => {
+    Client.on('messageCreate', async message => {
     const prefix = process.env.TOKEN
     xps(message)
     if (message.content.toLowerCase() === `${prefix}rank`) {
@@ -118,6 +116,5 @@ client.on('messageCreate', async message => {
         }
         userData.save()
     })   
-}
 
     
