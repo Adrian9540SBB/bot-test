@@ -7,7 +7,6 @@ const { createCanvas, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
-const userData = User.findOne({id: user}) || new User({id: user})
 module.exports = {
     name: "rank",
     description: "yes",
@@ -16,6 +15,7 @@ module.exports = {
             xps(message)
         })
         const user = message.mentions.users.first() || message.author;
+        const userData = User.findOne({id: user}) || new User({id: user})
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
@@ -107,6 +107,7 @@ module.exports = {
 
             
             function xps(message) {
+                if(!userData) return
                 if(message.author.bot) return
                 const randomXP = Math.floor(Math.random() * 150) + 50
                 userData.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toString()
