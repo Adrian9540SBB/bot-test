@@ -17,9 +17,6 @@ module.exports = {
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
-        client.on('messageCreate', async message => {
-            xps(message)
-        })
 
         if (!backgroundranks) {
             console.log("leeol")
