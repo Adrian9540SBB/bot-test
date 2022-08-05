@@ -13,7 +13,6 @@ module.exports = {
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
-        message.channel.send("test")
         console.log("lol")
         const userData = await User.findOne({id: user}) || new User({id: user})
         xps(message)
@@ -105,6 +104,18 @@ module.exports = {
             
             const attachment = new MessageAttachment(canvas.toBuffer(), 'rank.png')
             message.channel.send(attachment)
+
+            const embed = new MessageEmbed()
+            .setAuthor(`${user.username}'s Rank`, user.displayAvatarURL({dynamic: true}))
+            .setTimestamp()
+            .setColor('RANDOM')
+            .addField('Level:', `${level}`)
+            .addField('XP:', `${xp} / ${xpneed}`)
+            .setImage('attachment://rank.png')
+            .attachFiles(attachment)
+            message.channel.send(embed)
+
+
     
             function xps(message) {
                 if(message.author.bot) return
