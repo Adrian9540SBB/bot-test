@@ -1,7 +1,7 @@
 
 
 const fs = require("fs");
-const {MessageEmbed, MessageAttachment} = require("discord.js")
+const {MessageEmbed, MessageAttachment, client} = require("discord.js")
 
 const { createCanvas, loadImage } = require("canvas")
 
