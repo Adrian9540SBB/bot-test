@@ -8,7 +8,7 @@ const { createCanvas, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
-
+module.exports = (client) => {  
 client.on("messageCreate", async(message) => {
 xps(message)
 if(message.content === `${process.env.TOKEN}rank`) {
@@ -120,7 +120,7 @@ if(message.content === `${process.env.TOKEN}rank`) {
     }
     userData.save()
 })
-
+}
 
 
 
