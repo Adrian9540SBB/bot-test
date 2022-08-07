@@ -1,7 +1,7 @@
 
 
 const fs = require("fs");
-const {MessageEmbed, MessageAttachment, client} = require("discord.js")
+const {MessageEmbed, MessageAttachment, Client} = require("discord.js")
 
 const { createCanvas, loadImage } = require("canvas")
 
@@ -9,7 +9,7 @@ const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
 
-client.on("messageCreate", async(message) => {
+Client.on("messageCreate", async(message) => {
 xps(message)
 if(message.content === `${process.env.TOKEN}rank`) {
     const user = message.mentions.users.first() || message.author;
