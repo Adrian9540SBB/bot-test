@@ -9,7 +9,7 @@ const { User } = require("../Utils/test-schema.js")
 
 const ExpantaNum = require("./ExpantaNum.js")
 
-Client.on("messageCreate", async(message) => {
+client.on("messageCreate", async(message) => {
 xps(message)
 if(message.content === `${process.env.TOKEN}rank`) {
     const user = message.mentions.users.first() || message.author;
