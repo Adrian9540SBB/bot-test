@@ -106,9 +106,9 @@ module.exports = {
             ctx.drawImage(avatar,40,40,250,250)
             const image = await loadImage(canvas({ format: 'png'}))
             
-            const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
+            const attachment = new Discord.MessageAttachment('rank.png')
             message.channel.send("lol", {
-                files: [attachment]
+                files: [canvas.toBuffer(attachment)]
                 
             })
 
