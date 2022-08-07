@@ -23,12 +23,12 @@ module.exports = {
             const level = `${userData.levelranking.level}`
             const xp = `${userData.levelranking.xp}`
             const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
-
             if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                 const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
             }
+            userData.save()
         }
-        userData.save()
+        xps(message)
 
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);

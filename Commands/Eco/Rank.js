@@ -96,6 +96,7 @@ module.exports = {
             message.channel.send({
                 files: [attachment]
             })
+            userData.save()
     }   
 }
 
