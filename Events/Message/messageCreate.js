@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed, Collection} = require("discord.js");
-var OmegaNum = require("omega_num.js")
-
+const ExpantaNum = require("../../Commands/Eco/ExpantaNum.js")
+const { User } = require("../Utils/test-schema.js")
 
 module.exports = {
     name: "messageCreate",
@@ -9,8 +9,28 @@ module.exports = {
      * @param (Message) message
      */
     async execute(message, client, Discord) {
-        if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
 
+        const user = message.mentions.users.first() || message.author;
+        const userData = await User.findOne({id: user}) || new User({id: user})
+        const level = `${userData.levelranking.level}`
+        const xp = `${userData.levelranking.xp}`
+        const xpneed = ExpantaNum(level * 2 * 250 + 250)
+
+        function xps(message) {
+            if(message.author.bot) return
+            const randomXP = Math.floor(Math.random() * 150) + 50
+            userData.xp = ExpantaNum(ExpantaNum.add(userData.levelranking.xp,randomXP)).toString()
+            const level = `${userData.levelranking.level}`
+            const xp = `${userData.levelranking.xp}`
+            const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
+
+            if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
+                const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1).toString()
+            }
+        }
+        userData.save()
+
+        if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName) ||
