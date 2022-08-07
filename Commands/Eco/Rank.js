@@ -1,21 +1,9 @@
 
-
 const fs = require("fs");
 const {MessageEmbed, MessageAttachment} = require("discord.js")
-
 const { createCanvas, loadImage } = require("canvas")
-
 const { User } = require("../Utils/test-schema.js")
-
 const ExpantaNum = require("./ExpantaNum.js")
-
-
-
-
-
-
-
-
 module.exports = {
     name: "rank",
     description: "yes",
@@ -27,7 +15,6 @@ module.exports = {
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundranks = userData.levelranking.backgroundrank
-
         if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
@@ -104,18 +91,11 @@ module.exports = {
     
             const avatar = await loadImage(user.displayAvatarURL({ format: 'jpg' }))
             ctx.drawImage(avatar,40,40,250,250)
-            const image = await loadImage(canvas({ format: 'png'}))
-            
-            const attachment = new Discord.MessageAttachment('rank.png')
-            message.channel.send("lol", {
-                files: [canvas.toBuffer(attachment)]
-                
+
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
+            message.channel.send({
+                files: [attachment]
             })
+    }   
+}
 
-
-            
-            
-        }      
-    }
-
-    
