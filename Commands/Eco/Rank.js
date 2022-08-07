@@ -7,6 +7,8 @@ const { createCanvas, loadImage } = require("canvas")
 
 const { User } = require("../Utils/test-schema.js")
 
+const ExpantaNum = require("./ExpantaNum.js")
+
 
 
 
