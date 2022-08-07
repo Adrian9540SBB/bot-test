@@ -107,7 +107,7 @@ module.exports = {
             const image = await loadImage(canvas({ format: 'png'}))
             
             const attachment = new MessageAttachment(canvas.toBuffer(),'rank.png')
-            message.channel.reply({
+            message.channel.send({
                 files: [attachment]
             })
 
