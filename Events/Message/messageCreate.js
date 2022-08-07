@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed, Collection} = require("discord.js");
 const ExpantaNum = require("../../Commands/Eco/ExpantaNum.js")
-const { User } = require("../Utils/test-schema.js")
+const { User } = require("../../Commands/Utils/test-schema.js")
 
 module.exports = {
     name: "messageCreate",
