@@ -32,7 +32,6 @@ const User = new mongoose.Schema({
         },
         backgroundrank: {
             type: String,
-            required: true,
         },
         xpneeded: {
             type: String,
@@ -41,7 +40,6 @@ const User = new mongoose.Schema({
         },
         total: {
             type: String,
-            required: true,
             default: "100",
         },
     },
