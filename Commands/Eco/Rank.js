@@ -27,7 +27,6 @@ module.exports = {
             }
             )
             console.log("e")
-            return;
         }
         console.log("tst")
     
