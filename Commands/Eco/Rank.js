@@ -102,6 +102,8 @@ module.exports = {
                 console.log(error)
             }
 
+            console.log("if it has made it here its a problem with the attachment")
+
             userData.save()
     }   
 }
