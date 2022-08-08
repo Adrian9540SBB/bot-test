@@ -13,7 +13,9 @@ module.exports = {
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
-        const xpneed = ExpantaNum(level * 2 * 250 + 250)
+        const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250)).toString()
+
+        //level * 2 * 250 + 250
         let backgroundranks = userData.levelranking.backgroundrank
         if (!backgroundranks) {
             console.log("leeol")
@@ -51,11 +53,11 @@ module.exports = {
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
             console.log("1")
-            ctx.fillRect(200,216,((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5).toString(),65) // Uses ExpantaNum
+            ctx.fillRect(200,216,ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5).toString(),65) // Uses ExpantaNum
             console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
-    
+            //((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5)
             ctx.beginPath()
             ctx.lineWidth = 4
             ctx.fillStyle = '#ffae00'

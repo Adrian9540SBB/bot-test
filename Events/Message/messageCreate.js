@@ -25,14 +25,13 @@ module.exports = {
             console.log(userData.xp + "e " + randomXP)
             const level = `${userData.levelranking.level}`
             const xp = `${userData.levelranking.xp}`
-            const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
+            const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250)).toString()
             if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                 const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1)
                 userData.levelranking.xp = 0
                 userData.levelranking.level = levelnew
             }
         }
-
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
