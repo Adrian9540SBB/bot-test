@@ -28,7 +28,7 @@ module.exports = {
             )
             return
         }
-        console.log()
+        console.log("tst")
     
             const canvas = createCanvas(1000,333)
             const ctx = canvas.getContext('2d')
