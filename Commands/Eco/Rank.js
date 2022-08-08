@@ -79,7 +79,7 @@ module.exports = {
             ctx.fillText(member.username, 325, 155)
     
     
-            ctx.font = '40px sans-serif'
+            ctx.font = '36px sans-serif'
             ctx.fillStyle = "#FF0000"
             ctx.textAlign = "right"
             ctx.fillText(`Level: ${level}`, 900, 155)
