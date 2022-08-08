@@ -28,6 +28,8 @@ module.exports = {
             const xpneed = ExpantaNum(level * 2 * 250 + 250).toString()
             if (ExpantaNum.gte(ExpantaNum(xp),ExpantaNum(xpneed))) {
                 const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1)
+                userData.levelranking.xp = 0
+                userData.levelranking.level = levelnew
             }
         }
 
