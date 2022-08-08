@@ -1,9 +1,9 @@
 
 const fs = require("fs");
-const {MessageEmbed, MessageAttachment} = require("discord.js")
+const {MessageEmbed, MessageAttachment, ContextMenuInteraction} = require("discord.js")
 const { createCanvas, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema.js")
-const ExpantaNum = require("./ExpantaNum.js")
+const ExpantaNum = require("./ExpantaNum.js");
 module.exports = {
     name: "rank",
     description: "yes",
@@ -67,8 +67,16 @@ module.exports = {
             ctx.strokeRect(300,75,650,120)
             ctx.stroke()
     
-    
-            ctx.font = '35px sans-serif'
+            const applyText = (canvas, text) => {
+                let fontsize = 42
+                
+                do {
+                    ctx.font = `${fontSize -= 10}px sans-serif`
+                }   while (ctx.measureText(text).width > canvas.width - 300)
+                return ctx.font;
+            }
+            
+            ctx.font = applyText(canvas,`${xp} / ${xpneed}` )
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`${xp} / ${xpneed}`, 600, 260)
