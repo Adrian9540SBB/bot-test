@@ -49,7 +49,9 @@ module.exports = {
     
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
+            console.log("1")
             ctx.fillRect(200,216,((ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250),xp),7.5),100))),50) // Uses ExpantaNum
+            console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
     
@@ -87,10 +89,12 @@ module.exports = {
             ctx.stroke()
             ctx.closePath()
             ctx.clip()
-    
-    
+            console.log("5")
+            
             const avatar = await loadImage(user.displayAvatarURL({ format: 'jpg' }))
+            console.log("3")
             ctx.drawImage(avatar,40,40,250,250)
+            console.log("4")
 
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
             
