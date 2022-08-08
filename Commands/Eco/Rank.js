@@ -45,7 +45,6 @@ module.exports = {
                 }
                 )
                 message.reply("Try Again")
-                return;
             }
     
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
