@@ -13,7 +13,7 @@ module.exports = {
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
-        const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250)).toString()
+        const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250)).toStringWithDecimalPlaces(2)
 
         //level * 2 * 250 + 250
         let backgroundranks = userData.levelranking.backgroundrank
