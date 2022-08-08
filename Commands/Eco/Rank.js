@@ -17,7 +17,7 @@ module.exports = {
         let backgroundranks = userData.levelranking.backgroundrank
         if (!backgroundranks) {
             console.log("leeol")
-            const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
+            const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
             userData.levelranking.backgroundrank = FBGRL
             userData.save()
             return
@@ -28,7 +28,7 @@ module.exports = {
             let backgroundimage = await loadImage(backgroundranks)
             if(!backgroundimage || backgroundimage === null) {
                 console.log("aaaaa")
-                const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
+                const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
                 userData.levelranking.backgroundrank = FBGRL
                 message.reply("Try Again")
                 return
@@ -68,7 +68,7 @@ module.exports = {
             ctx.stroke()
     
             
-            ctx.font = "32px sans-serif"
+            ctx.font = "42px sans-serif"
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`${xp} / ${xpneed}`, 600, 260)
@@ -82,7 +82,7 @@ module.exports = {
             ctx.font = '40px sans-serif'
             ctx.fillStyle = "#FF0000"
             ctx.textAlign = "right"
-            ctx.fillText(`Level: ${level}`, 900, 120)
+            ctx.fillText(`Level: ${level}`, 900, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
