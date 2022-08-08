@@ -17,7 +17,7 @@ module.exports = {
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
         let backgroundranks = userData.levelranking.backgroundrank
-
+        userData.save()
         function xps(message) {
             if(message.author.bot) return
             const randomXP = ExpantaNum(Math.floor(Math.random() * 150) + 50).toString()
@@ -30,7 +30,6 @@ module.exports = {
                 const levelnew = ExpantaNum.add(`${userData.levelranking.level}`,1)
             }
         }
-        userData.save()
 
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
