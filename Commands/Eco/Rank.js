@@ -71,7 +71,7 @@ module.exports = {
             ctx.font = "36px sans-serif"
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`${xp} / ${xpneed}`, 600, 280)
+            ctx.fillText(`${xp} / ${xpneed}`, 600, 265)
     
             ctx.font = '50px sans-serif'
             ctx.textAlign = 'left'
