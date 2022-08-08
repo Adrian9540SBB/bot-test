@@ -67,16 +67,8 @@ module.exports = {
             ctx.strokeRect(300,75,650,120)
             ctx.stroke()
     
-            const applyText = (canvas, text) => {
-                let fontsize = 42
-                
-                do {
-                    ctx.font = `${fontSize -= 10}px sans-serif`
-                }   while (ctx.measureText(text).width > canvas.width - 300)
-                return ctx.font;
-            }
             
-            ctx.font = applyText(canvas,`${xp} / ${xpneed}` )
+            ctx.font = "32px sans-serif"
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`${xp} / ${xpneed}`, 600, 260)
