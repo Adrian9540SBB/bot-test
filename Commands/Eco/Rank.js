@@ -26,7 +26,8 @@ module.exports = {
                 $set:{FBGRL}
             }
             )
-            return
+            console.log("e")
+            return;
         }
         console.log("tst")
     
@@ -45,7 +46,7 @@ module.exports = {
                 }
                 )
                 message.reply("Try Again")
-                return
+                return;
             }
     
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
