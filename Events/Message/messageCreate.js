@@ -20,7 +20,7 @@ module.exports = {
 
         function xps(message) {
             if(message.author.bot) return
-            const randomXP = ExpantaNum(Math.floor(Math.random() * 150) + 50).toString
+            const randomXP = ExpantaNum(Math.floor(Math.random() * 150) + 50).toString()
             userData.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toString()
             console.log(userData.xp + "e " + randomXP)
             const level = `${userData.levelranking.level}`
