@@ -9,12 +9,14 @@ module.exports = {
      * @param (Message) message
      */
     async execute(message, client, Discord) {
-
+        console.log("LOL")
+        xps(message)
         const user = message.mentions.users.first() || message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
+        let backgroundranks = userData.levelranking.backgroundrank
 
         function xps(message) {
             if(message.author.bot) return
@@ -28,7 +30,6 @@ module.exports = {
             }
             userData.save()
         }
-        xps(message)
 
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot ) return
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
