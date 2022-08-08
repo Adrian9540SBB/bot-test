@@ -18,17 +18,10 @@ module.exports = {
         if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-            const response = userData.findOneAndUpdate(
-                {
-                id: user
-                },
-                {
-                $set:{FBGRL}
-            }
-            )
-            console.log("e")
+            userData.levelranking.backgroundrank = FBGRL
+            userData.save()
+            return
         }
-        console.log("tst")
     
             const canvas = createCanvas(1000,333)
             const ctx = canvas.getContext('2d')
@@ -36,15 +29,9 @@ module.exports = {
             if(!backgroundimage || backgroundimage === null) {
                 console.log("aaaaa")
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-                const response = userData.findOneAndUpdate(
-                    {
-                    id: user
-                    },
-                    {
-                    $set:{FBGRL}
-                }
-                )
+                userData.levelranking.backgroundrank = FBGRL
                 message.reply("Try Again")
+                return
             }
     
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
@@ -122,7 +109,6 @@ module.exports = {
 
             console.log("if it has made it here its a problem with the attachment")
 
-            userData.save()
     }   
 }
 
