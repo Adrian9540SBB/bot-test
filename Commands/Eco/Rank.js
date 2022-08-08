@@ -51,7 +51,7 @@ module.exports = {
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
             console.log("1")
-            ctx.fillRect(200,216,((ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(2,level),250),250),xp),7.5),100))),50) // Uses ExpantaNum
+            ctx.fillRect(200,216,((ExpantaNum(100 / (level * 2 * 250 + 250))) * xp ) * 7.5,65) // Uses ExpantaNum
             console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
