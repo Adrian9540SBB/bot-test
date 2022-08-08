@@ -82,7 +82,7 @@ module.exports = {
             ctx.font = '40px sans-serif'
             ctx.fillStyle = "#FF0000"
             ctx.textAlign = "right"
-            ctx.fillText(`Level: ${level}`, 500, 120)
+            ctx.fillText(`Level: ${level}`, 900, 120)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
