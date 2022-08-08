@@ -68,7 +68,7 @@ module.exports = {
             ctx.stroke()
     
             
-            ctx.font = "42px sans-serif"
+            ctx.font = "36px sans-serif"
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`${xp} / ${xpneed}`, 600, 260)
@@ -79,7 +79,7 @@ module.exports = {
             ctx.fillText(member.username, 325, 155)
     
     
-            ctx.font = '36px sans-serif'
+            ctx.font = '40px sans-serif'
             ctx.fillStyle = "#FF0000"
             ctx.textAlign = "right"
             ctx.fillText(`Level: ${level}`, 900, 155)
