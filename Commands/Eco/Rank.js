@@ -18,7 +18,14 @@ module.exports = {
         if (!backgroundranks) {
             console.log("leeol")
             const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-            const response = User.findOneAndUpdate({id: user},$set({FBGRL}))
+            const response = User.findOneAndUpdate(
+                {
+                id: user
+                },
+                {
+                $set:{FBGRL}
+            }
+            )
             return
         }
     
@@ -28,7 +35,14 @@ module.exports = {
             if(!backgroundimage || backgroundimage === null) {
                 console.log("aaaaa")
                 const FBGRL = "https://png.pngtree.com/png-clipart/20200701/original/pngtree-abstract-star-space-transparency-background-png-image_5439546.jpg"
-                const response = User.findOneAndUpdate({id: user},$set({FBGRL}))
+                const response = User.findOneAndUpdate(
+                    {
+                    id: user
+                    },
+                    {
+                    $set:{FBGRL}
+                }
+                )
                 message.reply("Try Again")
                 return
             }
