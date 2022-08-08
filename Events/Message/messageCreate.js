@@ -10,9 +10,9 @@ module.exports = {
      */
     async execute(message, client, Discord) {
         console.log("LOL")
-        xps(message)
         const user = message.mentions.users.first() || message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
+        xps(message)
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
         const xpneed = ExpantaNum(level * 2 * 250 + 250)
