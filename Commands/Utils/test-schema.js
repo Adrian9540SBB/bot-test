@@ -36,11 +36,11 @@ const User = new mongoose.Schema({
         xpneeded: {
             type: String,
             required: true,
-            default: "100",
+            default: "250",
         },
         total: {
             type: String,
-            default: "100",
+            default: "0",
         },
     },
     cooldowns: {
