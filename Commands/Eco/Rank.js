@@ -18,7 +18,6 @@ module.exports = {
         //level * 2 * 250 + 250
         let backgroundranks = userData.levelranking.backgroundrank
         if (!backgroundranks) {
-            console.log("leeol")
             const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
             userData.levelranking.backgroundrank = FBGRL
             userData.save()
@@ -29,7 +28,6 @@ module.exports = {
             const ctx = canvas.getContext('2d')
             let backgroundimage = await loadImage(backgroundranks)
             if(!backgroundimage || backgroundimage === null) {
-                console.log("aaaaa")
                 const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
                 userData.levelranking.backgroundrank = FBGRL
                 message.reply("Try Again")
@@ -52,9 +50,7 @@ module.exports = {
     
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
-            console.log("1")
             ctx.fillRect(200,216,ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),100),65) // Uses ExpantaNum
-            console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
             console.log(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),100).toString() + " 1 " + ((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5))
@@ -92,12 +88,9 @@ module.exports = {
             ctx.stroke()
             ctx.closePath()
             ctx.clip()
-            console.log("5")
             
             const avatar = await loadImage(user.displayAvatarURL({ format: 'jpg' }))
-            console.log("3")
             ctx.drawImage(avatar,40,40,250,250)
-            console.log("4")
 
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(),'rank.png')
             
@@ -109,7 +102,6 @@ module.exports = {
                 console.log(error)
             }
 
-            console.log("if it has made it here its a problem with the attachment")
 
     }   
 }
