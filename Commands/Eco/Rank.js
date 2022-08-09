@@ -53,7 +53,7 @@ module.exports = {
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
             console.log("1")
-            ctx.fillRect(200,216,ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),100).toString(),65) // Uses ExpantaNum
+            ctx.fillRect(200,216,ExpantaNum.mul(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),100),7.5).toString(),65) // Uses ExpantaNum
             console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
@@ -83,7 +83,7 @@ module.exports = {
     
             ctx.font = '40px sans-serif'
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`Level: ${level}`, 900, 155)
+            ctx.fillText(`Level: ${level}`, 600, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
