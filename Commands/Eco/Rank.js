@@ -57,6 +57,7 @@ module.exports = {
             console.log("2")
             ctx.fill()
             ctx.globalAlpha = 1
+            console.log(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),100).toString() + " 1 " + ((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5))
             //((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5)
             ctx.beginPath()
             ctx.lineWidth = 4
