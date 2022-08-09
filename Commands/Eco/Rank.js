@@ -50,10 +50,10 @@ module.exports = {
     
             ctx.fillStyle = "#b3ff00"
             ctx.globalAlpha= 0.6
-            ctx.fillRect(200,216,ExpantaNum.mul(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),10000,2)),65) // Uses ExpantaNum
+            ctx.fillRect(200,216,ExpantaNum.mul(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),1000,2)),65) // Uses ExpantaNum
             ctx.fill()
             ctx.globalAlpha = 1
-            console.log(ExpantaNum.mul(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),10000,2)).toString() + " 1 " + ((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5))
+            console.log(ExpantaNum.mul(ExpantaNum.div(ExpantaNum.mul(ExpantaNum.mul(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250),xp),7.5),1000,2)).toString() + " 1 " + ((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5))
             //((ExpantaNum(100 / (level * 2 * 250 + 250))* xp ) * 7.5)
             ctx.beginPath()
             ctx.lineWidth = 4
