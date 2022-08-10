@@ -33,7 +33,16 @@ module.exports = {
                 message.reply("Try Again")
                 return
             }
-    
+            
+            const applyText = (canvas, text) => {
+                let fontSize = 50
+
+                do {
+                    ctx.font = `${fontSize -= 10}px sans-serif`
+                }   while (ContextMenuInteraction.measureText(text).width > canvas.width - 300)
+                return ctx.font
+            };
+
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
     
             ctx.beginPath()
@@ -71,10 +80,10 @@ module.exports = {
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`${xp} / ${xpneed}`, 600, 265)
     
-            ctx.font = '50px sans-serif'
+            ctx.font = applyText(canvas, member.username)
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(member.username, 325, 155)
+            ctx.fillText(member.username, canvas.width / 2.5, canvas.height / 1.8)
     
     
             ctx.font = '40px sans-serif'
