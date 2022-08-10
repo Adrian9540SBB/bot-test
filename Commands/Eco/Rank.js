@@ -84,10 +84,10 @@ module.exports = {
             ctx.stroke()
     
             
-            ctx.font = "36px sans-serif"
+            ctx.font = applyText(canvas, `${xp} / ${xpneed}`)
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`${xp} / ${xpneed}`, 600, 265)
+            ctx.fillText(`${xp} / ${xpneed}`, 450, 265)
     
             ctx.font = applyText(canvas, member.username)
             ctx.textAlign = 'left'
