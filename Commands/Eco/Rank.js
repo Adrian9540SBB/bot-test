@@ -38,7 +38,7 @@ module.exports = {
                 let fontSize = 50
 
                 do {
-                    ctx.font = `${fontSize -= 10}px sans-serif`
+                    ctx.font = `${fontSize -= 20}px sans-serif`
                 }   while (ctx.measureText(text).width > canvas.width - 600)
                 return ctx.font
             };
@@ -88,7 +88,7 @@ module.exports = {
     
             ctx.font = applyText(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`Level: ${level}`, 700, 155)
+            ctx.fillText(`Level: ${level}`, 650, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
