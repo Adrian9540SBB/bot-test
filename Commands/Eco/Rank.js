@@ -86,9 +86,9 @@ module.exports = {
             ctx.fillText(member.username, 325, 155)
     
     
-            ctx.font = '40px sans-serif'
+            applyText(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`Level: ${level}`, 750, 155)
+            ctx.fillText(`Level: ${level}`, 700, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
