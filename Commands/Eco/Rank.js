@@ -38,10 +38,19 @@ module.exports = {
                 let fontSize = 50
 
                 do {
-                    ctx.font = `${fontSize -= 20}px sans-serif`
+                    ctx.font = `${fontSize -= 10}px sans-serif`
                 }   while (ctx.measureText(text).width > canvas.width - 600)
                 return ctx.font
             };
+            const applyText2 = (canvas, text) => {
+                let fontSize = 40
+
+                do {
+                    ctx.font = `${fontSize -= 10}px sans-serif`
+                }   while (ctx.measureText(text).width > canvas.width - 700)
+                return ctx.font
+            };
+
 
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
     
@@ -88,7 +97,7 @@ module.exports = {
     
             ctx.font = applyText(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`Level: ${level}`, 650, 155)
+            ctx.fillText(`Level: ${level}`, 600, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
