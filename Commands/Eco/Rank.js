@@ -51,7 +51,7 @@ module.exports = {
                 return ctx.font
             };
             const applyText3 = (canvas, text) => {
-                let fontSize = 36
+                let fontSize = 50
 
                 do {
                     ctx.font = `${fontSize -= 5}px sans-serif`
