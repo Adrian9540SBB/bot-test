@@ -105,7 +105,7 @@ module.exports = {
     
             ctx.font = applyText2(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`Level: ${level}`, 600, 155)
+            ctx.fillText(`Level: ${level}`, 700, 155)
             
             ctx.arc(170,160,120,0,Math.PI * 2,true)
             ctx.lineWidth = 6
