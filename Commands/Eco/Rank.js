@@ -39,7 +39,7 @@ module.exports = {
 
                 do {
                     ctx.font = `${fontSize -= 10}px sans-serif`
-                }   while (ContextMenuInteraction.measureText(text).width > canvas.width - 300)
+                }   while (ctx.measureText(text).width > canvas.width - 300)
                 return ctx.font
             };
 
