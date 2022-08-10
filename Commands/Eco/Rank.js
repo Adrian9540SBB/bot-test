@@ -50,6 +50,14 @@ module.exports = {
                 }   while (ctx.measureText(text).width > canvas.width - 700)
                 return ctx.font
             };
+            const applyText3 = (canvas, text) => {
+                let fontSize = 36
+
+                do {
+                    ctx.font = `${fontSize -= 5}px sans-serif`
+                }   while (ctx.measureText(text).width > canvas.width - 700)
+                return ctx.font
+            };
 
 
             ctx.drawImage(backgroundimage,0,0,canvas.width,canvas.height)
@@ -84,10 +92,10 @@ module.exports = {
             ctx.stroke()
     
             
-            ctx.font = applyText(canvas, `${xp} / ${xpneed}`)
+            ctx.font = applyText3(canvas, `${xp} / ${xpneed}` )
             ctx.textAlign = 'left'
             ctx.fillStyle = "#FF0000"
-            ctx.fillText(`${xp} / ${xpneed}`, 450, 265)
+            ctx.fillText(`${xp} / ${xpneed}`, 500, 265)
     
             ctx.font = applyText(canvas, member.username)
             ctx.textAlign = 'left'
@@ -95,7 +103,7 @@ module.exports = {
             ctx.fillText(member.username, 325, 155)
     
     
-            ctx.font = applyText(canvas, `Level: ${level}`)
+            ctx.font = applyText2(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`Level: ${level}`, 600, 155)
             
