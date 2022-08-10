@@ -86,7 +86,7 @@ module.exports = {
             ctx.fillText(member.username, 325, 155)
     
     
-            applyText(canvas, `Level: ${level}`)
+            ctx.font = applyText(canvas, `Level: ${level}`)
             ctx.fillStyle = "#FF0000"
             ctx.fillText(`Level: ${level}`, 700, 155)
             
