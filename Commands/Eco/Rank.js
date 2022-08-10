@@ -30,7 +30,7 @@ module.exports = {
             if(!backgroundimage || backgroundimage === null) {
                 const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
                 userData.levelranking.backgroundrank = FBGRL
-                message.reply("Try Again")
+                message.channel.reply("Try Again")
                 return
             }
             
@@ -39,7 +39,7 @@ module.exports = {
 
                 do {
                     ctx.font = `${fontSize -= 10}px sans-serif`
-                }   while (ctx.measureText(text).width > canvas.width - 300)
+                }   while (ctx.measureText(text).width > canvas.width - 600)
                 return ctx.font
             };
 
