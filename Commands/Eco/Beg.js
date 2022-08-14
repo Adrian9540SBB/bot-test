@@ -29,7 +29,7 @@ module.exports = {
     async execute(message,args,commandName,Client,Discord) {
         const user = message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
-        const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal)),ExpantaNum.mul(Math.random(), 32.539852))
+        const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),ExpantaNum.mul(Math.random(), ExpantaNum.mul(Math.random, 116.58394))))
         const success = Math.floor(Math.random() * 2) + 1
         const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length)
         const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length)
@@ -44,7 +44,7 @@ module.exports = {
                 })
             } else {
                 const DiscordEmbed2 = new MessageEmbed()
-                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount)}`)
+                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount) + " " + coins}`)
                 message.channel.send({
                     embeds: [DiscordEmbed2]
                 })
