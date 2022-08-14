@@ -29,7 +29,7 @@ module.exports = {
     async execute(message,args,commandName,Client,Discord) {
         const user = message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
-        const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),ExpantaNum.mul(Math.random(), ExpantaNum.mul(Math.random, 116.58394))))
+        const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),135.358))
         const success = Math.floor(Math.random() * 2) + 1
         const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length)
         const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length)
@@ -39,14 +39,14 @@ module.exports = {
             if(messageOutputSay3 == messageOutputsSuccess1[1]) {                
                 userData.bal = randomBegAmount;
                 const DiscordEmbed1 = new MessageEmbed()
-                .setDescription(`${messageOutputsSuccess3[messageOutputSay3] + messageOutputsSuccess1[messageOutputSay1] + 1 + messageOutputsSuccess2[messageOutputSay3] + randomBegAmount}`)
+                .setDescription(`${messageOutputsSuccess3[messageOutputSay3] + messageOutputsSuccess1[messageOutputSay1] + 1 + messageOutputsSuccess2[messageOutputSay3] + randomBegAmount} coins`)
                 message.channel.send({
                     embeds: [DiscordEmbed1]
                 })
             } else {
                 userData.bal = randomBegAmount;
                 const DiscordEmbed2 = new MessageEmbed()
-                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount) + " " + randomBegAmount}`)
+                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount)} coins`)
                 message.channel.send({
                     embeds: [DiscordEmbed2]
                 })
