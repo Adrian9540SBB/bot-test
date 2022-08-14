@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 const { User } = require("../Utils/test-schema")
 const fs = require("fs");
-var ExpantaNum = require("./ExpantaNum.js");
+const ExpantaNum = require("./ExpantaNum.js");
 const messageOutputsSuccess1 = [
     '','Your mom','Your Dad', 'Your sister', 'Your Brother', 'Donald Trump', 'Adrian9540',
     'Your Friend', 'Your Dog', 'Your Cat', 'This bot', 'A Stranger', 'TrollFace', 'Obama',
@@ -29,7 +29,7 @@ module.exports = {
     async execute(message,args,commandName,Client,Discord) {
         const user = message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
-        const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),135.358)).toStringWithDecimalPlaces(2)
+        const randomBegAmount = ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),135.358).toStringWithDecimalPlaces(2)
         const success = Math.floor(Math.random() * 2) + 1
         const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length)
         const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length)
