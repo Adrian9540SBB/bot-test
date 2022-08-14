@@ -44,7 +44,7 @@ module.exports = {
                 })
             } else {
                 const DiscordEmbed2 = new MessageEmbed()
-                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount) + " " + coins}`)
+                .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount) + " " + randomBegAmount}`)
                 message.channel.send({
                     embeds: [DiscordEmbed2]
                 })
