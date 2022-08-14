@@ -31,10 +31,10 @@ module.exports = {
         const userData = await User.findOne({id: user}) || new User({id: user})
         const randomBegAmount = ExpantaNum(ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal)),ExpantaNum.mul(Math.random(), ExpantaNum.mul(Math.random(), ExpantaNum.mul(Math.random(), 35.358))))
         const success = Math.floor(Math.random() * 2) + 1
-        const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length())
-        const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length())
-        const messageOutputSay3 = Math.floor(Math.random() * messageOutputsSuccess3.length())
-        const messageOutputSay4 = Math.floor(Math.random() * messageOutputsFail1.length())
+        const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length)
+        const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length)
+        const messageOutputSay3 = Math.floor(Math.random() * messageOutputsSuccess3.length)
+        const messageOutputSay4 = Math.floor(Math.random() * messageOutputsFail1.length)
         if (success === 1) {
             if(messageOutputSay3 == messageOutputsSuccess1[1]) {
                 const DiscordEmbed1 = new MessageEmbed()
