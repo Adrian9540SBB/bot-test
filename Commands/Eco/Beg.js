@@ -36,13 +36,15 @@ module.exports = {
         const messageOutputSay3 = Math.floor(Math.random() * messageOutputsSuccess3.length)
         const messageOutputSay4 = Math.floor(Math.random() * messageOutputsFail1.length)
         if (success === 1) {
-            if(messageOutputSay3 == messageOutputsSuccess1[1]) {
+            if(messageOutputSay3 == messageOutputsSuccess1[1]) {                
+                userData.bal = randomBegAmount;
                 const DiscordEmbed1 = new MessageEmbed()
                 .setDescription(`${messageOutputsSuccess3[messageOutputSay3] + messageOutputsSuccess1[messageOutputSay1] + 1 + messageOutputsSuccess2[messageOutputSay3] + randomBegAmount}`)
                 message.channel.send({
                     embeds: [DiscordEmbed1]
                 })
             } else {
+                userData.bal = randomBegAmount;
                 const DiscordEmbed2 = new MessageEmbed()
                 .setDescription(`${messageOutputsSuccess1[messageOutputSay1 + 1] + " " + messageOutputsSuccess2[messageOutputSay3] + " " + ExpantaNum(randomBegAmount) + " " + randomBegAmount}`)
                 message.channel.send({
@@ -50,10 +52,10 @@ module.exports = {
                 })
             }
         } else {
-                const DiscordEmbed2 = new MessageEmbed()
+                const DiscordEmbed3 = new MessageEmbed()
                 .setDescription(`${messageOutputsFail1[messageOutputSay4]}`)
                 message.channel.send({
-                    embeds: [DiscordEmbed2]
+                    embeds: [DiscordEmbed3]
                 })
             }
 
