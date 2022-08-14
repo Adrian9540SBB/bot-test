@@ -2,10 +2,10 @@ const {MessageEmbed, DataResolver} = require("discord.js")
 const fs = require("fs");
 var OmegaNum = require("./ExpantaNum.js")
 module.exports = {
-    name: "daily",
+    name: "da32kjhhjfgreily",
     description: "Your daily",
     execute(message, args, commandName, client, Discord) {
-        const target = message.mentions.users.first() || message.author;
+        const target = message.author;
         const member = message.guild.members.cache.get(target.id);
         let UserJSON = JSON.parse(fs.readFileSync("././Data/users.json"));
         if (!UserJSON[member.id]) {

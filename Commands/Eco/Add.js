@@ -1,4 +1,3 @@
-console.log("lol")
 const { MessageEmbed } = require("discord.js")
 const { User } = require("../Utils/test-schema")
 const fs = require("fs");
@@ -7,9 +6,10 @@ module.exports = {
     name: "add",
     description: "lol",
     async execute(message, args, commandName, client, Discord) {
-            const user = message.mentions.users.first() || message.author;
+        const user = message.mentions.users.first() || message.author;
+        if(user.id === "941883718044356718") {
             const userData = await User.findOne({id: user}) || new User({id: user})
-            const embed = new MessageEmbed({ color: "BLUE"})
+            const embed = new MessageEmbed({ color: "GREEN"})
             userData.bal = ExpantaNum.add(userData.bal,args[0]).toString()
             userData.save()
             return message.channel.send({
@@ -17,6 +17,7 @@ module.exports = {
                  embed.setDescription('Added ' + ExpantaNum(args[0]) + " to " + `${user.username}`)
                 ]
             })
+        } else return
      
 
     }

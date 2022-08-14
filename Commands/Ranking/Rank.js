@@ -3,13 +3,14 @@ const fs = require("fs");
 const {MessageEmbed, MessageAttachment, ContextMenuInteraction, UserContextMenuInteraction} = require("discord.js")
 const { createCanvas, loadImage } = require("canvas")
 const { User } = require("../Utils/test-schema.js")
-const ExpantaNum = require("./ExpantaNum.js");
+const ExpantaNum = require("../Eco/ExpantaNum.js");
 module.exports = {
     name: "rank",
     description: "yes",
     async execute(message, args, commandName, client, Discord) {
         const user = message.mentions.users.first() || message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
+        const serverID = message.guild.id
         const member = message.mentions.users.first() || message.author;
         const level = `${userData.levelranking.level}`
         const xp = `${userData.levelranking.xp}`
@@ -21,6 +22,7 @@ module.exports = {
             const FBGRL = "https://s3.amazonaws.com/ssrc-static/wp-content/uploads/2022/04/07131756/space-g25e2d7df9_1920-1000x333.jpg"
             userData.levelranking.backgroundrank = FBGRL
             userData.save()
+            message.channel.reply("Try Again")
             return
         }
     
