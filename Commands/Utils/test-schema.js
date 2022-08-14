@@ -12,7 +12,7 @@ const User = new mongoose.Schema({
     bal: {
         type: String,
         required: true,
-        default: "0",
+        default: "100",
     },
     bank: {
         type: String,
