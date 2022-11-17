@@ -29,8 +29,8 @@ module.exports = {
     async execute(message,args,commandName,Client,Discord) {
         const user = message.author;
         const userData = await User.findOne({id: user}) || new User({id: user})
-        const randomBegAmount = ExpantaNum.div(ExpantaNum.mul(Math.random(), userData.bal),135.358).toStringWithDecimalPlaces(2)
-        const success = Math.floor(Math.random() * 2) + 1
+        const randomBegAmount = ExpantaNum.div(ExpantaNum.mul(1, userData.bal),135.358).toStringWithDecimalPlaces(2)
+        const success = Math.floor(Math.random() * 2)
         const messageOutputSay1 = Math.floor(Math.random() * messageOutputsSuccess1.length)
         const messageOutputSay2 = Math.floor(Math.random() * messageOutputsSuccess2.length)
         const messageOutputSay3 = Math.floor(Math.random() * messageOutputsSuccess3.length)

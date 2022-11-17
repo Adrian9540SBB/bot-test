@@ -23,7 +23,6 @@ module.exports = {
             const randomXP = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum(Math.random()),150),50)).toStringWithDecimalPlaces(2)
             //Math.floor(Math.random() * 150) + 50
             userData.levelranking.xp = ExpantaNum.add(userData.levelranking.xp,randomXP).toStringWithDecimalPlaces(2)
-            console.log(userData.xp + "e " + randomXP)
             const level = `${userData.levelranking.level}`
             const xp = `${userData.levelranking.xp}`
             const xpneed = ExpantaNum(ExpantaNum.add(ExpantaNum.mul(ExpantaNum.mul(level,2),250),250)).toString()
